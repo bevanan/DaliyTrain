@@ -49,10 +49,14 @@ public class TwoLevelDynamicProxy {
 }
 
 interface Hello {
+    /**
+     * 说你好
+     */
     void sayHello();
 }
 
 class HelloImpl implements Hello {
+    @Override
     public void sayHello() {
         System.out.println("Hello, World!");
     }
@@ -63,7 +67,7 @@ class HelloImpl implements Hello {
 }
 
 class HelloProxy implements InvocationHandler {
-    private Object target;
+    private final Object target;
 
     public HelloProxy(Object target) {
         this.target = target;

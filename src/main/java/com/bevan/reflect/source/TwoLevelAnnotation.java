@@ -31,6 +31,9 @@ public class TwoLevelAnnotation {
     }
 }
 
+/**
+ * @author bevan
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @interface MyAnnotation {
     String value();
