@@ -1,4 +1,4 @@
-package com.bevan.stream;
+package main.java.com.bevan.stream;
 
 import java.util.*;
 import java.util.function.Function;

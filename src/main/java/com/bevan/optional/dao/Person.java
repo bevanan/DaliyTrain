@@ -1,4 +1,4 @@
-package com.bevan.optional.dao;
+package main.java.com.bevan.optional.dao;
 
 /**
  * @author zbf

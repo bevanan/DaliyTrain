@@ -1,4 +1,4 @@
-package com.bevan.reflect;
+package main.java.com.bevan.reflect;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

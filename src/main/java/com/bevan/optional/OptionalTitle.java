@@ -1,4 +1,4 @@
-package com.bevan.optional;
+package main.java.com.bevan.optional;
 
 import com.bevan.optional.dao.Person;
 

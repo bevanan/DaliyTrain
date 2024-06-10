@@ -1,7 +1,7 @@
-package com.bevan.reflect;
+package main.java.com.bevan.reflect;
 
 import com.bevan.optional.dao.Person;
-import com.bevan.stream.Student;
+import main.java.com.bevan.stream.Student;
 
 import java.lang.reflect.*;
 import java.util.ArrayList;
