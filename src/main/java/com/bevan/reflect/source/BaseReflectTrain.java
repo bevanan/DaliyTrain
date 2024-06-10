@@ -1,6 +1,6 @@
-package main.java.com.bevan.reflect;
+package main.java.com.bevan.reflect.source;
 
-import com.bevan.optional.dao.Person;
+import main.java.com.bevan.stream.Person;
 import main.java.com.bevan.stream.Student;
 
 import java.lang.reflect.*;
