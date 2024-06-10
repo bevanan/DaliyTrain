@@ -4,7 +4,7 @@ package main.java.com.bevan.stream;
  * @author zbf
  * @since 2023/12/18 23:05
  */
-public class Student {
+public class Student implements People {
     private int age;
     private String name;
     private int price;
@@ -47,5 +47,10 @@ public class Student {
                 ", price=" + price +
                 ", author='" + author + '\'' +
                 '}';
+    }
+
+    @Override
+    public void walk() {
+        System.out.println("I can walk!!!");
     }
 }

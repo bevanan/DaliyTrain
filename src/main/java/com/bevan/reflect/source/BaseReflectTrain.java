@@ -19,7 +19,7 @@ public class BaseReflectTrain {
 
     /**
      * 获取类信息
-     * 编写一个程序，使用反射机制获取并打印任意给定类的类名、包名、所有字段和方法的信息。
+     * 编写一个程序，使用反射机制获取并打印任意给定类的所有字段、方法、类名、包名的信息。
      */
     private static void getClassInfo1() {
 
@@ -85,13 +85,13 @@ public class BaseReflectTrain {
             System.out.println("Fields:");
             Field[] fields = clazz.getDeclaredFields();
             for (Field field : fields) {
-                System.out.println(field);
+                System.out.println(field.getName());
             }
 
             System.out.println("Methods:");
             Method[] methods = clazz.getDeclaredMethods();
             for (Method method : methods) {
-                System.out.println(method);
+                System.out.println(method.getName());
             }
 
             System.out.println("Interfaces:");
