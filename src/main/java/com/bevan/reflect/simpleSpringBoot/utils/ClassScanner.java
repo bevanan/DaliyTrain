@@ -1,4 +1,4 @@
-package main.java.com.bevan.reflect.simpleSpringBoot.utils;
+package com.bevan.reflect.simpleSpringBoot.utils;
 
 import java.io.File;
 import java.net.URISyntaxException;

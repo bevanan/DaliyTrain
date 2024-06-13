@@ -1,4 +1,4 @@
-package main.java.com.bevan.reflect.daliy;
+package com.bevan.reflect.daliy;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

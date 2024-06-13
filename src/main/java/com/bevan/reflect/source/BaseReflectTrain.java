@@ -1,7 +1,7 @@
-package main.java.com.bevan.reflect.source;
+package com.bevan.reflect.source;
 
-import main.java.com.bevan.stream.Person;
-import main.java.com.bevan.stream.Student;
+import com.bevan.stream.Person;
+import com.bevan.stream.Student;
 
 import java.lang.reflect.*;
 import java.util.ArrayList;

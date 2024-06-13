@@ -1,6 +1,6 @@
-package main.java.com.bevan.optional;
+package com.bevan.optional;
 
-import main.java.com.bevan.stream.Person;
+import com.bevan.stream.Person;
 
 import java.util.Optional;
 

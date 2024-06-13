@@ -1,4 +1,4 @@
-package main.java.com.bevan.thread.source;
+package com.bevan.thread.source;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

@@ -1,7 +1,7 @@
-package main.java.com.bevan.reflect.simpleSpringBoot.controller;
+package com.bevan.reflect.simpleSpringBoot.controller;
 
-import main.java.com.bevan.reflect.simpleSpringBoot.annotation.RequestMapping;
-import main.java.com.bevan.reflect.simpleSpringBoot.annotation.RestController;
+import com.bevan.reflect.simpleSpringBoot.annotation.RequestMapping;
+import com.bevan.reflect.simpleSpringBoot.annotation.RestController;
 
 /**
  * @author Baven

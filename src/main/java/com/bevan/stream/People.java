@@ -1,4 +1,4 @@
-package main.java.com.bevan.stream;
+package com.bevan.stream;
 
 /**
  * @author Baven

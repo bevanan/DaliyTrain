@@ -1,4 +1,4 @@
-package main.java.com.bevan.thread.source;
+package com.bevan.thread.source;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
