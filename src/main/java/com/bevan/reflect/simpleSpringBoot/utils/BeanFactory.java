@@ -10,7 +10,7 @@ import java.util.Set;
 
 /**
  * @author Baven
- * @date 2024/6/12 23:20
+ * @since 2024/6/12 23:20
  */
 public class BeanFactory {
     private Map<Class<?>, Object> beanMap = new HashMap<>(16);
@@ -33,7 +33,7 @@ public class BeanFactory {
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
