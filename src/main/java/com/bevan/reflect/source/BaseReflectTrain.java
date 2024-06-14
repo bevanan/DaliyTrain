@@ -14,7 +14,11 @@ import java.util.List;
 public class BaseReflectTrain {
     // 用Student当例子吧
     public static void main(String[] args) {
-        GenericReflection();
+        getClassInfo1();
+        getInitClass1();
+        getInitByConstructorClass1();
+        getPrivatePram1();
+        GenericReflection1();
     }
 
     /**
@@ -64,9 +68,6 @@ public class BaseReflectTrain {
     public static void GenericReflection1() {
 
     }
-
-
-
 
 
     // ------------answer-------------
