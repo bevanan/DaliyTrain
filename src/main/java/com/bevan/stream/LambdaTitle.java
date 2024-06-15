@@ -47,6 +47,13 @@ public class LambdaTitle {
         // 4.获取字符串集合中所有单词的长度，并生成Map
         List<String> items = Arrays.asList("apple", "banana", "cherry");
 
+        // 拓展题
+        /*
+        {
+            "hello" -> {h=1, e=1, l=2, o=1},
+            "world" -> {w=1, o=1, r=1, l=1, d=1}
+         } 生成这样的map，结构为 Map<String, Map<Character, Long>>
+         */
 
         // 5.分组（Map存在个数）
         List<String> items2 = Arrays.asList("apple", "banana", "cherry", "apple", "banana");
@@ -132,6 +139,21 @@ public class LambdaTitle {
         Map<String, Integer> map = items.stream()
                 .collect(Collectors.toMap(Function.identity(), String::length));
         // Function.identity()这个函数的输出就是其输入；经常用于那些需要一个函数作为参数的场合，但实际上你并不希望改变元素
+
+        // 拓展题
+        /*
+        {
+            "hello" -> {h=1, e=1, l=2, o=1},
+            "world" -> {w=1, o=1, r=1, l=1, d=1}
+         } 生成这样的map，结构为 Map<String, Map<Character, Long>>
+         */
+        Map<String, Map<Character, Long>> res = items.stream()
+                .collect(Collectors.toMap(
+                        Function.identity(),
+                        word -> word.chars()
+                                .mapToObj(c -> (char) c)
+                                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                ));
 
 
         // 分组（Map存在个数）
