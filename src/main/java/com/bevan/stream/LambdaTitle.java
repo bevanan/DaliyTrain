@@ -47,7 +47,10 @@ public class LambdaTitle {
         // 4.获取字符串集合中所有单词的长度，并生成Map
         List<String> items = Arrays.asList("apple", "banana", "cherry");
 
-        // 拓展题
+        // 拓展一 求每个字母的出现次数
+        // 例：[(a, 4), (e, 2), (p, 2), (n, 2), (r, 2), (b, 1), (c, 1), (h, 1), (l, 1), (y, 1)]
+
+        // 拓展二
         /*
         {
             "hello" -> {h=1, e=1, l=2, o=1},
@@ -123,6 +126,13 @@ public class LambdaTitle {
                 .sorted() // 按字母顺序排序
                 .collect(Collectors.toList()); // 收集到列表中
 
+        // 要的结果为 ["a1", "a2", "a3", "b1", "b2", "b3"]
+        List<String> list1 = Arrays.asList("a", "b");
+        List<String> list2 = Arrays.asList("1", "2", "3");
+        List<String> answer = list1.stream()
+                .flatMap(s1 -> list2.stream().map(s2 -> s1 + s2))
+                .collect(Collectors.toList());
+
 
         /*
           .reduce()用于将流中的元素组合成一个单一的结果。
@@ -140,7 +150,17 @@ public class LambdaTitle {
                 .collect(Collectors.toMap(Function.identity(), String::length));
         // Function.identity()这个函数的输出就是其输入；经常用于那些需要一个函数作为参数的场合，但实际上你并不希望改变元素
 
-        // 拓展题
+        // 拓展一 求每个字母的出现次数
+        // 例：[(a, 4), (e, 2), (p, 2), (n, 2), (r, 2), (b, 1), (c, 1), (h, 1), (l, 1), (y, 1)]
+        List<Map.Entry<Character, Long>> result111 = items.stream()
+                .flatMap(word -> word.chars().mapToObj(c -> (char) c))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream()
+                .sorted((e1, e2) -> Long.compare(e2.getValue(), e1.getValue()))
+                .collect(Collectors.toList());
+
+
+        // 拓展二
         /*
         {
             "hello" -> {h=1, e=1, l=2, o=1},
@@ -160,7 +180,8 @@ public class LambdaTitle {
         List<String> items2 = Arrays.asList("apple", "banana", "cherry", "apple", "banana");
         Map<String, Long> itemCount = items2.stream()
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
+        // .summingDouble --加法
+        // .collect(Collectors.groupingBy(Transaction::getType,Collectors.summingDouble(Transaction::getAmount)));
 
         /*
           对这些整数进行分组，按整数的奇偶性分成两组，并统计每组中整数的个数，
@@ -220,9 +241,9 @@ public class LambdaTitle {
 
 
         // 将两个列表中的元素分别相加，然后将结果组合成一个新的列表。
-        List<Integer> list1 = Arrays.asList(1, 2, 3);
-        List<Integer> list2 = Arrays.asList(4, 5, 6);
-        List<Integer> combinedList = Stream.concat(list1.stream(), list2.stream())
+        List<Integer> list123 = Arrays.asList(1, 2, 3);
+        List<Integer> list232 = Arrays.asList(4, 5, 6);
+        List<Integer> combinedList = Stream.concat(list123.stream(), list232.stream())
                 .map(n -> n * 2)
                 .collect(Collectors.toList());
 
