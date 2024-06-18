@@ -25,15 +25,14 @@ public class LambdaTitle {
                 Arrays.asList("c", "d", "e")
         );
 
-        // 相关题 组合与拆分
+        // .flatMap() 相关题 组合与拆分
         // 将这些字符串按逗号拆分成单词，并找出所有长度大于3的单词，去重后 按字母顺序排序并返回一个列表。
         List<String> phrases = Arrays.asList("hello world", "java stream", "code with fun", "hello java");
 
 
-        // （难） 对这些整数进行分组，按整数的奇偶性分成两组，并统计每组中整数的个数，
-        // 返回一个Map，其中key为"odd"或"even"，value为对应组中的整数个数。 结果：{"odd": 5, "even": 5}
-        List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
+        // 要的结果为 ["a1", "a2", "a3", "b1", "b2", "b3"]
+        List<String> list13 = Arrays.asList("a", "b");
+        List<String> list23 = Arrays.asList("1", "2", "3");
 
         // 10.将两个列表中的元素分别相加，然后将结果组合成一个新的列表。  相似题
         List<Integer> list1 = Arrays.asList(1, 2, 3);
@@ -60,6 +59,11 @@ public class LambdaTitle {
 
         // 5.分组（Map存在个数）
         List<String> items2 = Arrays.asList("apple", "banana", "cherry", "apple", "banana");
+
+
+        // （难） 对这些整数进行分组，按整数的奇偶性分成两组，并统计每组中整数的个数，
+        // 返回一个Map，其中key为"odd"或"even"，value为对应组中的整数个数。 结果：{"odd": 5, "even": 5}
+        List<Integer> numbers1 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 
         // 6.并行流(平方后再累加)
