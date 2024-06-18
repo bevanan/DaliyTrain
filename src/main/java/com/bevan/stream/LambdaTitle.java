@@ -154,8 +154,8 @@ public class LambdaTitle {
                 .collect(Collectors.toMap(Function.identity(), String::length));
         // Function.identity()这个函数的输出就是其输入；经常用于那些需要一个函数作为参数的场合，但实际上你并不希望改变元素
 
-        // 拓展一 求每个字母的出现次数
-        // 例：[(a, 4), (e, 2), (p, 2), (n, 2), (r, 2), (b, 1), (c, 1), (h, 1), (l, 1), (y, 1)]
+        // 拓展一 求每个字母的出现次数, 由大到小排序
+        // 例：[a=4, p=2, r=2, e=2, n=2, b=1, c=1, h=1, y=1, l=1]
         List<Map.Entry<Character, Long>> result111 = items.stream()
                 .flatMap(word -> word.chars().mapToObj(c -> (char) c))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
