@@ -47,7 +47,7 @@ public class LambdaTitle {
         List<String> items = Arrays.asList("apple", "banana", "cherry");
 
         // 拓展一 求每个字母的出现次数
-        // 例：[(a, 4), (e, 2), (p, 2), (n, 2), (r, 2), (b, 1), (c, 1), (h, 1), (l, 1), (y, 1)]
+        // 例：[a=4, p=2, r=2, e=2, n=2, b=1, c=1, h=1, y=1, l=1]
 
         // 拓展二
         /*
