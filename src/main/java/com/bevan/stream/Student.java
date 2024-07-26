@@ -8,12 +8,12 @@ import lombok.Data;
  */
 @Data
 public class Student implements People {
-    private int age;
+    private Integer age;
     private String name;
-    private int price;
+    private Integer price;
     private String author;
 
-    public Student(int age, String name) {
+    public Student(Integer age, String name) {
         this.age = age;
         this.name = name;
     }

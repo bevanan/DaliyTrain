@@ -1,6 +1,6 @@
 package com.bevan.optional;
 
-import com.bevan.stream.Person;
+import com.bevan.optional.dao.Person;
 
 import java.util.Optional;
 
@@ -12,6 +12,16 @@ public class OptionalTitle {
 
     public static void main(String[] args) {
         Person person = new Person();
-        Optional.ofNullable(person).orElseThrow(RuntimeException::new);
+        test(person);
+    }
+
+    public static void test(Person person) {
+        if (person != null) {
+            int age = person.getAge();
+        } else {
+            throw new RuntimeException("dfsfd");
+        }
+        // ||
+        Integer i = Optional.ofNullable(person).map(Person::getAge).orElseThrow(RuntimeException::new);
     }
 }
