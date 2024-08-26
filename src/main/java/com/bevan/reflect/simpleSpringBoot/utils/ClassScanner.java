@@ -22,6 +22,7 @@ public class ClassScanner {
             for (File file : directory.listFiles()) {
                 if (file.getName().endsWith(".class")) {
                     String className = basePackage + "." + file.getName().replace(".class", "");
+                    System.out.println(className);
                     classes.add(Class.forName(className));
                 }
             }

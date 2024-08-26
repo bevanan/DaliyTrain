@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
  * 相应的疑问，注解到底有什么作用？拿这个例子上说，我们新创建的注解无非就是存了个字符串，能有什么作用？
  *      答：也是例子上的演示，会判断被调用的这个方法是否有这个注解从而看要不要做额外的处理
  *
- * 理解后，可以尝试编写自己简易版依赖注入 MyAutowired
+ * 其中有两个例子：一个是理解注解的作用，另一个是简易版的自动注入。
  */
 public class TwoLevelAnnotation {
     public static void main(String[] args) {

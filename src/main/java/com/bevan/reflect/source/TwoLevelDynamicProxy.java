@@ -9,7 +9,7 @@ import java.lang.reflect.Proxy;
  * @since 2024/6/9 上午10:31
  * 1. 我先寻问了创建代理时的两个参数是否是固定的（类加载器、接口数组），待问为啥要指定的类加载器：用于加载传入的接口数组中的所有方法，
  *      并确保代理对象与目标对象在相同的类加载器上，避免类型转换异常或其他兼容性问题。
- * 2. 在问了两个位子的invoke分别代表什么，知道了 InvocationHandler 接口的 invoke 方法和 Method 类的 invoke 的区别
+ * 2. 再问了两个位子的invoke分别代表什么，知道了 InvocationHandler 接口的 invoke 方法和 Method 类的 invoke 的区别
  *      外层的invoke是JVM调用的，内部的invoke看自己要不要调用，下方有例子
  * 3. 接着问了 Method里面的invoke参数target的作用，简而言之就是：目的是告诉method，现在调用的方法要作用在哪一个具体对象上；
  *      args为传的参数，可以为null

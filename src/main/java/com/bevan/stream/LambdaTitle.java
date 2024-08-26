@@ -80,7 +80,7 @@ public class LambdaTitle {
 
         // 8.给定一个字符串列表，按照字符串长度从短到长排序，并取前三个字符串。
         List<String> strings1 = Arrays.asList("apple", "banana", "kiwi", "orange", "grape");
-
+        // 那从长到短呢？
 
         // 9.检查一个字符串数组中是否存在包含某特定字符的字符串。
         String[] words = {"java", "python", "ruby", "javascript"};
@@ -92,6 +92,10 @@ public class LambdaTitle {
         // 给定一个包含 Person 对象的列表，按照年龄从低到高排序，并取出前三个产品。
 
         // 计算一个包含 Person 对象的列表中所有学生的平均分数。
+
+        // 每个年龄段分别有多少钱
+
+        // 统计每个年龄段分别有多少钱
 
         // 把 Person 的姓名、年龄单独 拎出来后，存进Student内   集合
 
@@ -162,8 +166,6 @@ public class LambdaTitle {
         List<String> items2 = Arrays.asList("apple", "banana", "cherry", "apple", "banana");
         Map<String, Long> itemCount = items2.stream()
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        // .summingDouble --加法
-        // .collect(Collectors.groupingBy(Transaction::getType,Collectors.summingDouble(Transaction::getAmount)));
 
 
         // 拓展一 求每个字母的出现次数, 由大到小排序
@@ -241,6 +243,7 @@ public class LambdaTitle {
                 .sorted(Comparator.comparing(String::length))
                 .limit(3)
                 .collect(Collectors.toList());
+        // 那从长到短呢？.sorted(Comparator.comparing(String::length).reversed()) 即可
 
 
         // 检查一个字符串数组中是否存在包含某特定字符的字符串。
@@ -281,10 +284,19 @@ public class LambdaTitle {
                 .mapToDouble(Person::getPrice)
                 .average()
                 .orElse(0.0);
+
+        // .summingDouble --加法
+        // 每个年龄段分别有多少钱
+        Map<Integer, Double> collect1 = people.stream().collect(Collectors.groupingBy(Person::getAge, Collectors.summingDouble(Person::getPrice)));
+        // .summarizingDouble -- 不仅包含加法，里面额外包含统计，最大值最小值等
+        Map<Integer, DoubleSummaryStatistics> collect2 = people.stream().collect(Collectors.groupingBy(Person::getAge, Collectors.summarizingDouble(Person::getPrice)));
+
+
         // 现在有一个类为学生集合list，学生类中有个字段为age。
         // 现在我想根据这个age将list拆分为map，key为age，value为对应归纳好的list
         List<Person> persons = null;
         Map<Integer, List<Person>> collect = persons.stream().collect(Collectors.groupingBy(Person::getAge));
+
 
         List<String> items21 = Arrays.asList("apple", "banana", "cherry", "apple", "banana");
         // 结果： {banana=[banana, banana], cherry=[cherry], apple=[apple, apple]}
