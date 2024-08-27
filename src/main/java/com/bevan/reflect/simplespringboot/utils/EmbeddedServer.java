@@ -1,4 +1,4 @@
-package com.bevan.reflect.simpleSpringBoot.utils;
+package com.bevan.reflect.simplespringboot.utils;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,4 +1,4 @@
-package com.bevan.reflect.simpleSpringBoot.annotation;
+package com.bevan.reflect.simplespringboot.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

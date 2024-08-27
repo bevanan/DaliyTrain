@@ -23,7 +23,9 @@ public class TwoLevelGetPackageClass {
         System.out.println(resource);
         try {
             File directory = new File(resource.toURI());
+            System.out.println(directory);
             for (File file : directory.listFiles()) {
+                System.out.println(file.getName());
                 String className = packageName + "." + file.getName().replace(".class", "");
                 System.out.println(className);
             }

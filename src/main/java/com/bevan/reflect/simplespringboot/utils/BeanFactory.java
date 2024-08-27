@@ -1,7 +1,7 @@
-package com.bevan.reflect.simpleSpringBoot.utils;
+package com.bevan.reflect.simplespringboot.utils;
 
-import com.bevan.reflect.simpleSpringBoot.annotation.RequestMapping;
-import com.bevan.reflect.simpleSpringBoot.annotation.RestController;
+import com.bevan.reflect.simplespringboot.annotation.RequestMapping;
+import com.bevan.reflect.simplespringboot.annotation.RestController;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;

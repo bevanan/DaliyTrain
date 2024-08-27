@@ -1,7 +1,7 @@
-package com.bevan.reflect.simpleSpringBoot;
+package com.bevan.reflect.simplespringboot;
 
-import com.bevan.reflect.simpleSpringBoot.utils.BeanFactory;
-import com.bevan.reflect.simpleSpringBoot.utils.EmbeddedServer;
+import com.bevan.reflect.simplespringboot.utils.BeanFactory;
+import com.bevan.reflect.simplespringboot.utils.EmbeddedServer;
 
 /**
  * @author zbf
