@@ -1,4 +1,4 @@
-package com.bevan.reflect.source;
+package com.bevan.reflect.base;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
