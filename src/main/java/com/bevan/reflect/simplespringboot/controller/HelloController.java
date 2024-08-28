@@ -5,7 +5,7 @@ import com.bevan.reflect.simplespringboot.annotation.RestController;
 
 /**
  * @author Baven
- * @date 2024/6/12 23:18
+ * @since  2024/6/12 23:18
  */
 @RestController
 public class HelloController {
