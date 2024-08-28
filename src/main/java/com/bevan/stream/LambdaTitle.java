@@ -89,6 +89,8 @@ public class LambdaTitle {
         // 给定一个包含 Person 对象的列表，筛选出所有年龄大于等于 18 的人，并将他们的姓名放入新的列表中。
         List<Person> people = initPersonData();
 
+        // sout 每个people的年龄
+
         // 给定一个包含 Person 对象的列表，按照年龄从低到高排序，并取出前三个产品。
 
         // 计算一个包含 Person 对象的列表中所有学生的平均分数。
@@ -266,6 +268,11 @@ public class LambdaTitle {
                 .filter(person -> person.getAge() >= 18)
                 .map(Person::getName)
                 .collect(Collectors.toList());
+
+        // sout 每个people的年龄
+        // 并行流支持：在使用并行流（parallelStream()）时，forEach() 可以自动并行处理集合中的元素，从而提高性能。
+        // 返回 void，即没有返回值。执行完操作后，流就被消耗掉了，无法再使用该流。
+        people.stream().map(Person::getAge).forEach(System.out::println);
 
         // 给定一个包含 Product 对象的列表，按照年龄从低到高排序，并取出前三个产品。
         List<Person> products1 = people.stream()
