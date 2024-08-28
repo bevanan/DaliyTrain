@@ -91,7 +91,7 @@ public class LambdaTitle {
 
         // sout 每个people的年龄
 
-        // 给定一个包含 Person 对象的列表，按照年龄从低到高排序，并取出前三个产品。
+        // 给定一个包含 Person 对象的列表，按照年龄从低到高排序，并取出前三人。
 
         // 计算一个包含 Person 对象的列表中所有学生的平均分数。
 
@@ -263,8 +263,8 @@ public class LambdaTitle {
 
 
         // 给定一个包含 Person 对象的列表，筛选出所有年龄大于等于 18 的人，并将他们的姓名放入新的列表中。
-        List<Person> people = initPersonData();
-        List<String> adultsNames = people.stream()
+        List<Person> persons = initPersonData();
+        List<String> adultsNames = persons.stream()
                 .filter(person -> person.getAge() >= 18)
                 .map(Person::getName)
                 .collect(Collectors.toList());
@@ -272,36 +272,36 @@ public class LambdaTitle {
         // sout 每个people的年龄
         // 并行流支持：在使用并行流（parallelStream()）时，forEach() 可以自动并行处理集合中的元素，从而提高性能。
         // 返回 void，即没有返回值。执行完操作后，流就被消耗掉了，无法再使用该流。
-        people.stream().map(Person::getAge).forEach(System.out::println);
+        persons.stream().map(Person::getAge).forEach(System.out::println);
 
-        // 给定一个包含 Product 对象的列表，按照年龄从低到高排序，并取出前三个产品。
-        List<Person> products1 = people.stream()
+        // 给定一个包含 Product 对象的列表，按照年龄从低到高排序，并取出前三人。
+        List<Person> products1 = persons.stream()
                 .sorted(Comparator.comparing(Person::getAge))
                 .limit(3)
                 .collect(Collectors.toList());
 
         // 检查一个包含 person 对象的数组，是否存在至少一本书的作者是特定的作者。
-        Person[] person = people.toArray(new Person[0]);
+        Person[] person = persons.toArray(new Person[0]);
         String targetAuthor = "bevan";
         boolean hasBookByAuthor = Arrays.stream(person)
                 .anyMatch(book -> book.getName().equals(targetAuthor));
 
         // 计算一个包含 Student 对象的列表中所有学生的平均分数。
-        double averageScore = people.stream()
+        double averageScore = persons.stream()
                 .mapToDouble(Person::getPrice)
                 .average()
                 .orElse(0.0);
 
         // .summingDouble --加法
         // 每个年龄段分别有多少钱
-        Map<Integer, Double> collect1 = people.stream().collect(Collectors.groupingBy(Person::getAge, Collectors.summingDouble(Person::getPrice)));
+        Map<Integer, Double> collect1 = persons.stream().collect(Collectors.groupingBy(Person::getAge, Collectors.summingDouble(Person::getPrice)));
         // .summarizingDouble -- 不仅包含加法，里面额外包含统计，最大值最小值等
-        Map<Integer, DoubleSummaryStatistics> collect2 = people.stream().collect(Collectors.groupingBy(Person::getAge, Collectors.summarizingDouble(Person::getPrice)));
+        Map<Integer, DoubleSummaryStatistics> collect2 = persons.stream().collect(Collectors.groupingBy(Person::getAge, Collectors.summarizingDouble(Person::getPrice)));
 
 
         // 现在有一个类为学生集合list，学生类中有个字段为age。
         // 现在我想根据这个age将list拆分为map，key为age，value为对应归纳好的list
-        List<Person> persons = null;
+        List<Person> personList = null;
         Map<Integer, List<Person>> collect = persons.stream().collect(Collectors.groupingBy(Person::getAge));
 
 
@@ -313,8 +313,8 @@ public class LambdaTitle {
 
 
         // 把 Person 的姓名、年龄单独 拎出来后，存进Student内  集合
-        List<Person> personList = null;
-        List<Student> studentList = personList.stream().map(person1 -> new Student(person1.getAge(), person1.getName()))
+        List<Person> personList1 = null;
+        List<Student> studentList = personList1.stream().map(person1 -> new Student(person1.getAge(), person1.getName()))
                 .collect(Collectors.toList());
 
     }
