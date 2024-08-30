@@ -87,9 +87,9 @@ public class LambdaTitle {
 
 
         // 给定一个包含 Person 对象的列表，筛选出所有年龄大于等于 18 的人，并将他们的姓名放入新的列表中。
-        List<Person> people = initPersonData();
+        List<Person> persons = initPersonData();
 
-        // sout 每个people的年龄
+        // sout 每个person的年龄
 
         // 给定一个包含 Person 对象的列表，按照年龄从低到高排序，并取出前三人。
 
