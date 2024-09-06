@@ -85,6 +85,8 @@ public class LambdaTitle {
         // 9.检查一个字符串数组中是否存在包含某特定字符的字符串。
         String[] words = {"java", "python", "ruby", "javascript"};
 
+        // 要求：输出结果为 输出: name1/name2/name3
+        List<String> names = Arrays.asList("name1", "name2", "name3");
 
         // 给定一个包含 Person 对象的列表，筛选出所有年龄大于等于 18 的人，并将他们的姓名放入新的列表中。
         List<Person> persons = initPersonData();
@@ -260,6 +262,12 @@ public class LambdaTitle {
         List<Integer> combinedList = Stream.concat(list123.stream(), list232.stream())
                 .map(n -> n * 2)
                 .collect(Collectors.toList());
+
+
+        // 要求：输出结果为 输出: name1/name2/name3
+        List<String> names = Arrays.asList("name1", "name2", "name3");
+        String join1 = names.stream().collect(Collectors.joining("/"));
+        String join2 = String.join("/", names);
 
 
         // 给定一个包含 Person 对象的列表，筛选出所有年龄大于等于 18 的人，并将他们的姓名放入新的列表中。
