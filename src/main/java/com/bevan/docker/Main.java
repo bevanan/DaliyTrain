@@ -78,11 +78,11 @@ public class Main {
         // docker rmi e784f4560448
         //
         //
-        // #运行一个新容器
+        // #运行一个新容器，没有就直接拉取最新版本
         // docker run nginx
         // #停止容器
         // docker stop keen_blackwell
-        // #启动容器
+        // #启动容器。592是容器id，但是这是id的前3位，能区分就行
         // docker start 592
         // #重启容器
         // docker restart 592
@@ -96,10 +96,13 @@ public class Main {
         // docker rm -f 592
         // # 后台启动容器
         // docker run -d --name mynginx nginx
-        // # 后台启动并暴露端口
+        // # 后台启动并暴露端口 端口的映射，外部宿主机能访问到容器内的端口号，
+        // 比如： -p 88:80，代表宿主机端口号88与容器的80映射了，访问宿主机ip:88等与访问容器80
         // docker run -d --name mynginx -p 80:80 nginx
-        // # 进入容器内部
+        // # 进入容器内部 -it：以交互模式；用哪种方式，用/bin/bash控制台
         // docker exec -it mynginx /bin/bash
+        // 将nginx默认的欢迎页，改成自己的
+        // echo "<h1>Hello, Docker</h1>" > index.html
         //
         // # 提交容器变化打成一个新的镜像
         // docker commit -m "update index.html" mynginx mynginx:v1.0
