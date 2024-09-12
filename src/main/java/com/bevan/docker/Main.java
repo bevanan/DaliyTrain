@@ -76,8 +76,8 @@ public class Main {
         // docker images
         // #删除指定id的镜像
         // docker rmi e784f4560448
-        //
-        //
+
+
         // #运行一个新容器，没有就直接拉取最新版本
         // docker run nginx
         // #停止容器
@@ -102,8 +102,9 @@ public class Main {
         // # 进入容器内部 -it：以交互模式；用哪种方式，用/bin/bash控制台
         // docker exec -it mynginx /bin/bash
         // 将nginx默认的欢迎页，改成自己的
-        // echo "<h1>Hello, Docker</h1>" > index.html
-        //
+        // echo "<h1>Hello, Docker</h1>" > index.html   直接覆盖
+
+
         // # 提交容器变化打成一个新的镜像
         // docker commit -m "update index.html" mynginx mynginx:v1.0
         // # 保存镜像为指定文件
@@ -112,13 +113,22 @@ public class Main {
         // docker rmi bde7d154a67f 94543a6c1aef e784f4560448
         // # 加载镜像
         // docker load -i mynginx.tar
-        //
-        //
+
+
         // # 登录 docker hub
         // docker login
         // # 重新给镜像打标签
         // docker tag mynginx:v1.0 leifengyang/mynginx:v1.0
+        // docker tag mynginx:v1.0 leifengyang/mynginx:latest => 目的是对方pull的时候没有带版本号，可直接拉去最新的，避免报错
         // # 推送镜像
         // docker push leifengyang/mynginx:v1.0
+
+        // 小技巧
+        // 直接批量删除容器 ；  docker ps -aq; -a 打印全部容器 -q 只打印容器id
+        // docker rm -f $(docker ps -aq)
+
+
+
+
     }
 }
