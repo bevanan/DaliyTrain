@@ -105,6 +105,8 @@ public class LambdaTitle {
 
         // 根据这个age将list拆分为map，key为age，value为对应归纳好的list
 
+        // 有出现相同name的人，那么仅保留其中一位（需要了解toMap第三个参数的作用）
+
         // 检查一个包含 Book 对象的数组，是否存在至少一本书的作者是特定的作者。
         Person[] person = null; // people集合转换成数组
         String targetAuthor = "bevan";
@@ -325,6 +327,12 @@ public class LambdaTitle {
         List<Student> studentList = personList1.stream().map(person1 -> new Student(person1.getAge(), person1.getName()))
                 .collect(Collectors.toList());
 
+        // 有出现相同name的人，那么仅保留其中一位（需要了解toMap第三个参数的作用）
+        List<Person> collect3 = persons.stream()
+                .collect(Collectors.toMap(Person::getName, obj -> obj, (existing, replacement) -> existing)).values().stream()
+                .collect(Collectors.toList());
+        List<Person> collect4 = new ArrayList<>(persons.stream()
+                .collect(Collectors.toMap(Person::getName, obj -> obj, (existing, replacement) -> existing)).values());
     }
 
     public static List<Person> initPersonData() {
