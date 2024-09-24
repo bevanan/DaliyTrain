@@ -48,8 +48,9 @@ public class LambdaTitle {
         List<String> items = Arrays.asList("apple", "banana", "cherry");
 
 
-        // 5.分组（Map存在个数）
+        // 5.计算单词分别有几个
         List<String> items2 = Arrays.asList("apple", "banana", "cherry", "apple", "banana");
+        // 还可以 如果有相同的名字可以相加起来，用逗号分割 (简单举例为了熟悉API)
 
 
         // 拓展一 求每个字母的出现次数
@@ -105,7 +106,9 @@ public class LambdaTitle {
 
         // 根据这个age将list拆分为map，key为age，value为对应归纳好的list
 
-        // 有出现相同name的人，那么仅保留其中一位（需要了解toMap第三个参数的作用）
+        // 有出现相同年龄的人，那么仅保留其中一位
+
+        // 输出年龄对应的人名
 
         // 检查一个包含 Book 对象的数组，是否存在至少一本书的作者是特定的作者。
         Person[] person = null; // people集合转换成数组
@@ -168,11 +171,13 @@ public class LambdaTitle {
                 .collect(Collectors.toMap(Function.identity(), String::length));
         // Function.identity()这个函数的输出就是其输入；经常用于那些需要一个函数作为参数的场合，但实际上你并不希望改变元素
 
-        // 分组（Map存在个数）
+        // 计算单词分别有几个
         List<String> items2 = Arrays.asList("apple", "banana", "cherry", "apple", "banana");
         Map<String, Long> itemCount = items2.stream()
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
+        // 还可以 如果有相同的名字可以相加起来，用逗号分割
+        Map<String, String> collect3 = items2.stream()
+                .collect(Collectors.toMap(Function.identity(), Function.identity(), (exist, newOne) -> exist + "," + newOne));
 
         // 拓展一 求每个字母的出现次数, 由大到小排序
         // 例：[a=4, p=2, r=2, e=2, n=2, b=1, c=1, h=1, y=1, l=1]
@@ -327,12 +332,14 @@ public class LambdaTitle {
         List<Student> studentList = personList1.stream().map(person1 -> new Student(person1.getAge(), person1.getName()))
                 .collect(Collectors.toList());
 
-        // 有出现相同name的人，那么仅保留其中一位（需要了解toMap第三个参数的作用）
-        List<Person> collect3 = persons.stream()
-                .collect(Collectors.toMap(Person::getName, obj -> obj, (existing, replacement) -> existing)).values().stream()
-                .collect(Collectors.toList());
-        List<Person> collect4 = new ArrayList<>(persons.stream()
-                .collect(Collectors.toMap(Person::getName, obj -> obj, (existing, replacement) -> existing)).values());
+
+        // ------------------- 9.24 新知识点 ------------------
+        // 有出现相同年龄的人，那么仅保留其中一位（需要了解toMap第三个参数的作用），
+        // 了解后：第三参数主要是解决key冲突的解决方案，如下：如果名字key发生了冲突，那么就把这两个冲突的值拿出来做处理，下方的做法的保留了其中一个对象。
+        persons.stream().collect(Collectors.toMap(Person::getAge, Function.identity(), (existing, replacement) -> existing))
+                .values().stream().collect(Collectors.toList());
+        // 遇到冲突就相加
+        persons.stream().collect(Collectors.toMap(Person::getName, Person::getAge, (existingAge, newAge) -> existingAge + newAge)).values();
     }
 
     public static List<Person> initPersonData() {
