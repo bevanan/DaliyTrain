@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 public class LambdaTitle {
     public static void main(String[] args) {
         // 调试 .peek  -- 不做数据处理，通常都是看流内数据的处理情况
-        // .peek(n -> System.out.println(n))
+        // .peek(n -> System.out.println(n));通常如果不做处理，那就直接forEach即可
 
         // 1.组合多个操作 -- 1.将字符串转换为整数  2.筛选出偶数 3.排序
         List<String> strings = Arrays.asList("1", "2", "3", "4", "5");
