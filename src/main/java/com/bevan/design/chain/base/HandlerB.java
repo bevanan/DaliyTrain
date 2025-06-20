@@ -1,4 +1,4 @@
-package com.bevan.design.chain;
+package com.bevan.design.chain.base;
 
 public class HandlerB extends Handler {
     @Override

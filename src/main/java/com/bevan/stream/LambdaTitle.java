@@ -92,6 +92,8 @@ public class LambdaTitle {
         // 给定一个包含 Person 对象的列表，筛选出所有年龄大于等于 18 的人，并将他们的姓名放入新的列表中。
         List<Person> persons = initPersonData();
 
+        // 筛选出 lisa 和 bevan
+
         // sout 每个person的年龄
 
         // 给定一个包含 Person 对象的列表，按照年龄从低到高排序，并取出前三人。
@@ -282,6 +284,12 @@ public class LambdaTitle {
         List<String> adultsNames = persons.stream()
                 .filter(person -> person.getAge() >= 18)
                 .map(Person::getName)
+                .collect(Collectors.toList());
+
+        // 筛选出lisa 和bevan
+        List<String> condition = Arrays.asList("lisa", "bevan");
+        List<Person> collect4 = persons.stream()
+                .filter(n -> condition.contains(n.getName()))
                 .collect(Collectors.toList());
 
         // sout 每个people的年龄
